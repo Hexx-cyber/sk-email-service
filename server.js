@@ -12,7 +12,6 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-const admin = require('firebase-admin');
 
 // Agar environment variable se JSON string mil rahi hai toh usay parse kar lein
 const serviceAccount = process.env.FIREBASE_SERVICE_ACCOUNT 
