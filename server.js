@@ -66,7 +66,7 @@ function getPasswordResetHTML(resetLink) {
                   <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center">
                     <tr>
                       <td style="vertical-align: middle; padding-right: 12px;">
-                        <img src="https://i.ibb.co/jPFYgDZD/transparent2.png" alt="SK Logo" width="38" height="38" style="display: block; border-radius: 8px; object-fit: contain;">
+                        <img src="cid:transparent2.png" alt="SK Logo" width="38" height="38" style="display: block; border-radius: 8px; object-fit: contain;">
                       </td>
                       <td style="vertical-align: middle; text-align: left;">
                         <h1 style="margin: 0; font-size: 20px; font-weight: 900; color: #ffffff; letter-spacing: 2px;">SK MESSENGER</h1>
