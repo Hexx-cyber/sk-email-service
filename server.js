@@ -41,7 +41,7 @@ transporter.verify((error, success) => {
   }
 });
 
-// Pitch Black & Sleek Gray High-End HTML Email Template
+// Pitch Black & Sleek Gray High-End HTML Email Template with Logo & Solid White Button
 function getPasswordResetHTML(resetLink) {
   return `
     <!DOCTYPE html>
@@ -60,9 +60,11 @@ function getPasswordResetHTML(resetLink) {
               <!-- Sleek Accent Top Bar -->
               <tr><td style="height: 3px; background: linear-gradient(90deg, #ffffff 0%, #757575 100%);"></td></tr>
 
-              <!-- Header -->
+              <!-- Header with Logo & Brand Name -->
               <tr>
                 <td align="center" style="padding: 36px 24px 12px 24px;">
+                  <!-- Yahan aap apne hosted logo ka direct public image URL laga sakte hain -->
+                  <img src="https://i.ibb.co/3s4v6r9/transparent2.png" alt="SK Logo" width="50" height="50" style="display: block; margin-bottom: 12px; border-radius: 10px;">
                   <h1 style="margin: 0; font-size: 22px; font-weight: 900; color: #ffffff; letter-spacing: 2px;">SK MESSENGER</h1>
                   <span style="font-size: 10px; color: #9E9E9E; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; display: inline-block; margin-top: 8px;">Protocol Security Division</span>
                 </td>
@@ -83,7 +85,7 @@ function getPasswordResetHTML(resetLink) {
                     A cryptographic password reset sequence has been initiated for your SK Messenger account. Execute the authentication sequence below to update your security credentials.
                   </p>
 
-                  <!-- Solid White Sleek Button -->
+                  <!-- Solid White Sleek Button with Black Text -->
                   <a href="${resetLink}" target="_blank" style="display: inline-block; padding: 14px 40px; font-size: 14px; font-weight: 800; color: #000000 !important; background-color: #ffffff; text-decoration: none; border-radius: 12px; letter-spacing: 0.5px; box-shadow: 0 4px 20px rgba(255, 255, 255, 0.15);">
                     RESET PASSWORD
                   </a>
@@ -98,7 +100,7 @@ function getPasswordResetHTML(resetLink) {
               <tr>
                 <td style="padding: 18px; text-align: center; background-color: #080808; border-top: 1px solid #1f1f1f; font-size: 10px; color: #666666; letter-spacing: 0.5px;">
                   🔒 End-to-End Encrypted Architecture<br>
-                  &copy; 2026 SK Messenger Inc. All rights reserved.
+                  &copy; 2026 SK Messenger Inc. All rights reserved.[cite: 6]
                 </td>
               </tr>
 
@@ -123,7 +125,6 @@ app.post('/api/send-reset-email', async (req, res) => {
     const resetLink = await getAuth().generatePasswordResetLink(email);
 
     const mailOptions = {
-      // Spam se bachne ke liye exact verified SMTP username use karein
       from: `"SK Messenger" <${process.env.EMAIL_USER}>`,
       to: email,
       subject: '🔒 Credential Reset Authorization - SK Messenger',
@@ -132,7 +133,7 @@ app.post('/api/send-reset-email', async (req, res) => {
     };
 
     await transporter.sendMail(mailOptions);
-    return res.status(200).json({ success: true, message: 'Branded reset email sent successfully!' });
+    return res.status(200).json({ success: true, message: 'Branded reset email sent successfully!' });[cite: 6]
   } catch (error) {
     console.error('Email send failed:', error);
     return res.status(500).json({ success: false, error: error.message });
