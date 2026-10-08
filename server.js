@@ -64,7 +64,7 @@ function getPasswordResetHTML(resetLink) {
               <tr>
                 <td align="center" style="padding: 36px 24px 16px 24px;">
                   <!-- App Logo (Hosted Direct URL) -->
-                  <img src="https://i.ibb.co/3s4v6r9/transparent2.png" alt="SK Logo" width="48" height="48" style="display: block; margin: 0 auto 14px auto; border-radius: 12px; object-fit: contain;">
+                  <img src="https://i.ibb.co/jPFYgDZD/transparent2.png" alt="SK Logo" width="48" height="48" style="display: block; margin: 0 auto 14px auto; border-radius: 12px; object-fit: contain;">
                   <h1 style="margin: 0; font-size: 22px; font-weight: 900; color: #ffffff; letter-spacing: 2px;">SK MESSENGER</h1>
                   <span style="font-size: 10px; color: #9E9E9E; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; display: inline-block; margin-top: 8px;">Protocol Security Division</span>
                 </td>
