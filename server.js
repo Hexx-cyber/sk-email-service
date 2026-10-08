@@ -41,7 +41,7 @@ transporter.verify((error, success) => {
   }
 });
 
-// Professional Pitch Black & Sleek Gray HTML Email Template with Logo & Solid White Button
+// Professional Pitch Black & Sleek Gray HTML Email Template with Logo on Left & Bulletproof Solid White Button
 function getPasswordResetHTML(resetLink) {
   return `
     <!DOCTYPE html>
@@ -60,20 +60,27 @@ function getPasswordResetHTML(resetLink) {
               <!-- Sleek Accent Top Bar -->
               <tr><td style="height: 3px; background: linear-gradient(90deg, #ffffff 0%, #757575 100%);"></td></tr>
 
-              <!-- Header with Logo & Brand Name -->
+              <!-- Header with Logo on Left and Brand Name -->
               <tr>
-                <td align="center" style="padding: 36px 24px 16px 24px;">
-                  <!-- App Logo (Hosted Direct URL) -->
-                  <img src="https://i.ibb.co/jPFYgDZD/transparent2.png" alt="SK Logo" width="48" height="48" style="display: block; margin: 0 auto 14px auto; border-radius: 12px; object-fit: contain;">
-                  <h1 style="margin: 0; font-size: 22px; font-weight: 900; color: #ffffff; letter-spacing: 2px;">SK MESSENGER</h1>
-                  <span style="font-size: 10px; color: #9E9E9E; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; display: inline-block; margin-top: 8px;">Protocol Security Division</span>
+                <td align="center" style="padding: 32px 24px 16px 24px;">
+                  <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center">
+                    <tr>
+                      <td style="vertical-align: middle; padding-right: 12px;">
+                        <img src="https://i.ibb.co/jPFYgDZD/transparent2.png" alt="SK Logo" width="38" height="38" style="display: block; border-radius: 8px; object-fit: contain;">
+                      </td>
+                      <td style="vertical-align: middle; text-align: left;">
+                        <h1 style="margin: 0; font-size: 20px; font-weight: 900; color: #ffffff; letter-spacing: 2px;">SK MESSENGER</h1>
+                        <span style="font-size: 9px; color: #9E9E9E; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700; display: block; margin-top: 4px;">Protocol Security Division</span>
+                      </td>
+                    </tr>
+                  </table>
                 </td>
               </tr>
 
               <!-- Divider -->
               <tr>
                 <td align="center" style="padding: 0 32px;">
-                  <hr style="border: none; border-top: 1px solid #222222; margin: 10px 0 20px 0;">
+                  <hr style="border: none; border-top: 1px solid #222222; margin: 5px 0 20px 0;">
                 </td>
               </tr>
 
@@ -85,10 +92,16 @@ function getPasswordResetHTML(resetLink) {
                     A cryptographic password reset sequence has been initiated for your SK Messenger account. Execute the authentication sequence below to update your security credentials.
                   </p>
 
-                  <!-- Professional Solid White Button with Black Text -->
-                  <a href="${resetLink}" target="_blank" style="display: inline-block; padding: 14px 40px; font-size: 14px; font-weight: 800; color: #000000 !important; background-color: #ffffff; text-decoration: none; border-radius: 12px; letter-spacing: 0.5px; box-shadow: 0 4px 20px rgba(255, 255, 255, 0.15);">
-                    RESET PASSWORD
-                  </a>
+                  <!-- Bulletproof Solid White Button Table -->
+                  <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" style="margin: 0 auto;">
+                    <tr>
+                      <td align="center" bgcolor="#ffffff" style="border-radius: 12px; box-shadow: 0 4px 20px rgba(255, 255, 255, 0.15);">
+                        <a href="${resetLink}" target="_blank" style="font-size: 14px; font-weight: 800; color: #000000 !important; text-decoration: none; padding: 14px 36px; border-radius: 12px; display: inline-block; letter-spacing: 0.5px;">
+                          RESET PASSWORD
+                        </a>
+                      </td>
+                    </tr>
+                  </table>
 
                   <p style="font-size: 11px; color: #666666; margin-top: 32px; line-height: 1.6;">
                     If you did not request this authorization sequence, disregard this communication. Your existing cryptographic credentials remain secure.
