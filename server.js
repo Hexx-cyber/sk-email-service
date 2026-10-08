@@ -19,14 +19,12 @@ const serviceAccount = process.env.FIREBASE_SERVICE_ACCOUNT
   ? JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT) 
   : require('./serviceAccountKey.json');
 
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount)
-});
-
-// Firebase Admin initialize
-admin.initializeApp({
-  credential: cert(serviceAccount)
-});
+// Agar admin.apps.length check nahi hua wa toh initialize kar lein
+if (!admin.apps.length) {
+  admin.initializeApp({
+    credential: admin.credential.cert(serviceAccount)
+  });
+}
 
 // Nodemailer Transporter Setup
 const transporter = nodemailer.createTransport({
