@@ -12,8 +12,16 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-// Service Account Key file
-const serviceAccount = require('./serviceAccountKey.json');
+const admin = require('firebase-admin');
+
+// Agar environment variable se JSON string mil rahi hai toh usay parse kar lein
+const serviceAccount = process.env.FIREBASE_SERVICE_ACCOUNT 
+  ? JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT) 
+  : require('./serviceAccountKey.json');
+
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount)
+});
 
 // Firebase Admin initialize
 admin.initializeApp({
