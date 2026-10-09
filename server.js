@@ -41,7 +41,7 @@ transporter.verify((error, success) => {
   }
 });
 
-// Pitch Black & Sleek Gray High-End HTML Email Template with Logo & Solid White Button
+// Pitch Black & Sleek Gray High-End HTML Email Template (Logo Removed)
 function getPasswordResetHTML(resetLink) {
   return `
     <!DOCTYPE html>
@@ -75,10 +75,9 @@ function getPasswordResetHTML(resetLink) {
               <!-- Sleek Accent Top Bar -->
               <tr><td style="height: 3px; background: linear-gradient(90deg, #ffffff 0%, #757575 100%);"></td></tr>
 
-              <!-- Header with Logo & Brand Name -->
+              <!-- Header with Brand Name Only -->
               <tr>
-                <td align="center" style="padding: 36px 24px 12px 24px;">
-                  <img src="https://iili.io/nGS8YS2.png" alt="SK Logo" width="50" height="50" style="display: block; margin-bottom: 12px; border-radius: 10px; border: 0; outline: none; text-decoration: none; object-fit: contain;">
+                <td align="center" style="padding: 40px 24px 16px 24px;">
                   <h1 class="dark-text" style="margin: 0; font-size: 22px; font-weight: 900; color: #ffffff; letter-spacing: 2px;">SK MESSENGER</h1>
                   <span style="font-size: 10px; color: #9E9E9E; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; display: inline-block; margin-top: 8px;">Protocol Security Division</span>
                 </td>
@@ -128,11 +127,11 @@ function getPasswordResetHTML(resetLink) {
 }
 
 // API Endpoint
-app.post('/api/send-reset-email', async (req, e_res) => {
+app.post('/api/send-reset-email', async (req, res) => {
   const { email } = req.body;
 
   if (!email) {
-    return e_res.status(400).json({ success: false, message: 'Email is required.' });
+    return res.status(400).json({ success: false, message: 'Email is required.' });
   }
 
   try {
@@ -147,10 +146,10 @@ app.post('/api/send-reset-email', async (req, e_res) => {
     };
 
     await transporter.sendMail(mailOptions);
-    return e_res.status(200).json({ success: true, message: 'Branded reset email sent successfully!' });
+    return res.status(200).json({ success: true, message: 'Branded reset email sent successfully!' });
   } catch (error) {
     console.error('Email send failed:', error);
-    return e_res.status(500).json({ success: false, error: error.message });
+    return res.status(500).json({ success: false, error: error.message });
   }
 });
 
