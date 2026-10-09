@@ -41,7 +41,7 @@ transporter.verify((error, success) => {
   }
 });
 
-// Pitch Black & Sleek Gray High-End HTML Email Template with Logo & Solid White Button (Mobile Dark Mode Fixed)
+// Pitch Black & Sleek Gray High-End HTML Email Template with Logo & Solid White Button
 function getPasswordResetHTML(resetLink) {
   return `
     <!DOCTYPE html>
@@ -112,7 +112,7 @@ function getPasswordResetHTML(resetLink) {
               <tr>
                 <td style="padding: 18px; text-align: center; background-color: #080808 !important; border-top: 1px solid #1f1f1f; font-size: 10px; color: #666666; letter-spacing: 0.5px;">
                   🔒 End-to-End Encrypted Architecture<br>
-                  &copy; 2026 SK Messenger Inc. All rights reserved.[cite: 6]
+                  &copy; 2026 SK Messenger Inc. All rights reserved.
                 </td>
               </tr>
 
@@ -126,11 +126,11 @@ function getPasswordResetHTML(resetLink) {
 }
 
 // API Endpoint
-app.post('/api/send-reset-email', async (req, res) => {
+app.post('/api/send-reset-email', async (req, e_res) => {
   const { email } = req.body;
 
   if (!email) {
-    return res.status(400).json({ success: false, message: 'Email is required.' });
+    return e_res.status(400).json({ success: false, message: 'Email is required.' });
   }
 
   try {
@@ -145,10 +145,10 @@ app.post('/api/send-reset-email', async (req, res) => {
     };
 
     await transporter.sendMail(mailOptions);
-    return res.status(200).json({ success: true, message: 'Branded reset email sent successfully!' });[cite: 6]
+    return e_res.status(200).json({ success: true, message: 'Branded reset email sent successfully!' });
   } catch (error) {
     console.error('Email send failed:', error);
-    return res.status(500).json({ success: false, error: error.message });
+    return e_res.status(500).json({ success: false, error: error.message });
   }
 });
 
