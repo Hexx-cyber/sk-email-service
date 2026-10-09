@@ -41,8 +41,11 @@ transporter.verify((error, success) => {
   }
 });
 
-// Professional Pitch Black & Sleek Gray HTML Email Template with Logo on Left & Bulletproof Solid White Button
+// Professional Pitch Black & Sleek Gray HTML Email Template with Inline Embedded Logo & Solid White Button
 function getPasswordResetHTML(resetLink) {
+  // Ultra-crisp Embedded SVG Logo Data URI (Matches your pitch-black sleek aesthetic perfectly)
+  const logoDataUri = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='38' height='38' viewBox='0 0 38 38'><rect width='38' height='38' rx='8' fill='%231e1e1e' stroke='%23333333' stroke-width='1'/><text x='50% ' y='54%' dominant-baseline='middle' text-anchor='middle' fill='%23ffffff' font-family='Arial, sans-serif' font-weight='900' font-size='14'>SK</text></svg>";
+
   return `
     <!DOCTYPE html>
     <html lang="en">
@@ -66,7 +69,7 @@ function getPasswordResetHTML(resetLink) {
                   <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center">
                     <tr>
                       <td style="vertical-align: middle; padding-right: 12px;">
-                        <img src="transparent2.png" alt="SK Logo" width="38" height="38" style="display: block; border-radius: 8px; object-fit: contain;">
+                        <img src="${logoDataUri}" alt="SK Logo" width="38" height="38" style="display: block; border-radius: 8px;">
                       </td>
                       <td style="vertical-align: middle; text-align: left;">
                         <h1 style="margin: 0; font-size: 20px; font-weight: 900; color: #ffffff; letter-spacing: 2px;">SK MESSENGER</h1>
@@ -147,7 +150,7 @@ app.post('/api/send-reset-email', async (req, res) => {
     await transporter.sendMail(mailOptions);
     return res.status(200).json({ success: true, message: 'Branded reset email sent successfully!' });
   } catch (error) {
-    console.error('Email send failed:', error);
+    console.log('Email send failed:', error);
     return res.status(500).json({ success: false, error: error.message });
   }
 });
