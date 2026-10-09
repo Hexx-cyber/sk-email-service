@@ -60,19 +60,13 @@ function getPasswordResetHTML(resetLink) {
               <!-- Sleek Accent Top Bar -->
               <tr><td style="height: 3px; background: linear-gradient(90deg, #ffffff 0%, #757575 100%);"></td></tr>
 
-              <!-- Header with Professional Monogram Box on Left -->
+              <!-- Header with Original Logo on Left and Brand Name -->
               <tr>
                 <td align="center" style="padding: 32px 24px 16px 24px;">
                   <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center">
                     <tr>
                       <td style="vertical-align: middle; padding-right: 12px;">
-                        <table role="presentation" cellspacing="0" cellpadding="0" border="0">
-                          <tr>
-                            <td align="center" bgcolor="#1e1e1e" style="width: 38px; height: 38px; border-radius: 8px; border: 1px solid #333333; font-family: Arial, sans-serif; font-size: 13px; font-weight: 900; color: #ffffff; text-align: center; vertical-align: middle;">
-                              SK
-                            </td>
-                          </tr>
-                        </table>
+                        <img src="https://i.ibb.co/jPFYgDZD/transparent2.png" alt="SK Logo" width="38" height="38" style="display: block; width: 38px; height: 38px; border-radius: 8px; border: 0; outline: none; text-decoration: none; object-fit: contain;">
                       </td>
                       <td style="vertical-align: middle; text-align: left;">
                         <h1 style="margin: 0; font-size: 20px; font-weight: 900; color: #ffffff; letter-spacing: 2px;">SK MESSENGER</h1>
@@ -131,7 +125,6 @@ function getPasswordResetHTML(resetLink) {
     </html>
   `;
 }
-
 // API Endpoint
 app.post('/api/send-reset-email', async (req, res) => {
   const { email } = req.body;
