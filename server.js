@@ -41,7 +41,7 @@ transporter.verify((error, success) => {
   }
 });
 
-// Professional Pitch Black & Sleek Gray HTML Email Template with Inline Embedded Logo & Solid White Button
+// Pitch Black & Sleek Gray High-End HTML Email Template with Logo & Solid White Button (Mobile Dark Mode Fixed)
 function getPasswordResetHTML(resetLink) {
   return `
     <!DOCTYPE html>
@@ -49,38 +49,43 @@ function getPasswordResetHTML(resetLink) {
     <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="color-scheme" content="dark">
+      <meta name="supported-color-schemes" content="dark">
       <title>Secure Password Reset - SK Messenger</title>
+      <style>
+        :root {
+          color-scheme: dark;
+          supported-color-schemes: dark;
+        }
+        body, table, td, a {
+          -webkit-text-size-adjust: 100%;
+          -ms-text-size-adjust: 100%;
+        }
+        [data-ogsc] .dark-mode-bg { background-color: #121212 !important; }
+      </style>
     </head>
-    <body style="margin: 0; padding: 0; background-color: #000000; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color: #ffffff;">
-      <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color: #000000; padding: 40px 10px;">
+    <body style="margin: 0; padding: 0; background-color: #000000 !important; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color: #ffffff;">
+      <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color: #000000 !important; padding: 40px 10px;">
         <tr>
           <td align="center">
-            <table role="presentation" width="100%" style="max-width: 480px; background: #121212; border-radius: 16px; border: 1px solid #282828; overflow: hidden; box-shadow: 0 16px 40px rgba(0,0,0,0.8);" cellspacing="0" cellpadding="0" border="0">
+            <table role="presentation" width="100%" class="dark-mode-bg" style="max-width: 480px; background: #121212 !important; border-radius: 16px; border: 1px solid #282828; overflow: hidden; box-shadow: 0 16px 40px rgba(0,0,0,0.8);" cellspacing="0" cellpadding="0" border="0">
               
               <!-- Sleek Accent Top Bar -->
               <tr><td style="height: 3px; background: linear-gradient(90deg, #ffffff 0%, #757575 100%);"></td></tr>
 
-              <!-- Header with Original Logo on Left and Brand Name -->
+              <!-- Header with Logo & Brand Name -->
               <tr>
-                <td align="center" style="padding: 32px 24px 16px 24px;">
-                  <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center">
-                    <tr>
-                      <td style="vertical-align: middle; padding-right: 12px;">
-                        <img src="https://iili.io/nGS8YS2.png" alt="SK Logo" width="38" height="38" style="display: block; width: 38px; height: 38px; border-radius: 8px; border: 0; outline: none; text-decoration: none; object-fit: contain;">
-                      </td>
-                      <td style="vertical-align: middle; text-align: left;">
-                        <h1 style="margin: 0; font-size: 20px; font-weight: 900; color: #ffffff; letter-spacing: 2px;">SK MESSENGER</h1>
-                        <span style="font-size: 9px; color: #9E9E9E; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700; display: block; margin-top: 4px;">Protocol Security Division</span>
-                      </td>
-                    </tr>
-                  </table>
+                <td align="center" style="padding: 36px 24px 12px 24px;">
+                  <img src="https://iili.io/nGS8YS2.png" alt="SK Logo" width="50" height="50" style="display: block; margin-bottom: 12px; border-radius: 10px; border: 0; outline: none; text-decoration: none; object-fit: contain;">
+                  <h1 style="margin: 0; font-size: 22px; font-weight: 900; color: #ffffff; letter-spacing: 2px;">SK MESSENGER</h1>
+                  <span style="font-size: 10px; color: #9E9E9E; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; display: inline-block; margin-top: 8px;">Protocol Security Division</span>
                 </td>
               </tr>
 
               <!-- Divider -->
               <tr>
                 <td align="center" style="padding: 0 32px;">
-                  <hr style="border: none; border-top: 1px solid #222222; margin: 5px 0 20px 0;">
+                  <hr style="border: none; border-top: 1px solid #222222; margin: 10px 0 20px 0;">
                 </td>
               </tr>
 
@@ -92,16 +97,10 @@ function getPasswordResetHTML(resetLink) {
                     A cryptographic password reset sequence has been initiated for your SK Messenger account. Execute the authentication sequence below to update your security credentials.
                   </p>
 
-                  <!-- Bulletproof Solid White Button for Mobile & PC -->
-                  <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" style="margin: 0 auto;">
-                    <tr>
-                      <td align="center" bgcolor="#ffffff" style="border-radius: 12px; -webkit-border-radius: 12px; -moz-border-radius: 12px; background: #ffffff;">
-                        <a href="${resetLink}" target="_blank" style="font-size: 14px; font-weight: 800; color: #000000 !important; background-color: #ffffff; text-decoration: none; padding: 14px 36px; border-radius: 12px; border: 1px solid #ffffff; display: inline-block; letter-spacing: 0.5px; mso-hide: all;">
-                          RESET PASSWORD
-                        </a>
-                      </td>
-                    </tr>
-                  </table>
+                  <!-- Solid White Sleek Button with Black Text -->
+                  <a href="${resetLink}" target="_blank" style="display: inline-block; padding: 14px 40px; font-size: 14px; font-weight: 800; color: #000000 !important; background-color: #ffffff !important; text-decoration: none; border-radius: 12px; letter-spacing: 0.5px; box-shadow: 0 4px 20px rgba(255, 255, 255, 0.15);">
+                    RESET PASSWORD
+                  </a>
 
                   <p style="font-size: 11px; color: #666666; margin-top: 32px; line-height: 1.6;">
                     If you did not request this authorization sequence, disregard this communication. Your existing cryptographic credentials remain secure.
@@ -111,9 +110,9 @@ function getPasswordResetHTML(resetLink) {
 
               <!-- Footer -->
               <tr>
-                <td style="padding: 18px; text-align: center; background-color: #080808; border-top: 1px solid #1f1f1f; font-size: 10px; color: #666666; letter-spacing: 0.5px;">
+                <td style="padding: 18px; text-align: center; background-color: #080808 !important; border-top: 1px solid #1f1f1f; font-size: 10px; color: #666666; letter-spacing: 0.5px;">
                   🔒 End-to-End Encrypted Architecture<br>
-                  &copy; 2026 SK Messenger Inc. All rights reserved.
+                  &copy; 2026 SK Messenger Inc. All rights reserved.[cite: 6]
                 </td>
               </tr>
 
@@ -125,6 +124,7 @@ function getPasswordResetHTML(resetLink) {
     </html>
   `;
 }
+
 // API Endpoint
 app.post('/api/send-reset-email', async (req, res) => {
   const { email } = req.body;
@@ -140,13 +140,14 @@ app.post('/api/send-reset-email', async (req, res) => {
       from: `"SK Messenger" <${process.env.EMAIL_USER}>`,
       to: email,
       subject: '🔒 Credential Reset Authorization - SK Messenger',
+      text: `Access your password reset link: ${resetLink}`,
       html: getPasswordResetHTML(resetLink)
     };
 
     await transporter.sendMail(mailOptions);
-    return res.status(200).json({ success: true, message: 'Branded reset email sent successfully!' });
+    return res.status(200).json({ success: true, message: 'Branded reset email sent successfully!' });[cite: 6]
   } catch (error) {
-    console.log('Email send failed:', error);
+    console.error('Email send failed:', error);
     return res.status(500).json({ success: false, error: error.message });
   }
 });
