@@ -43,9 +43,6 @@ transporter.verify((error, success) => {
 
 // Professional Pitch Black & Sleek Gray HTML Email Template with Inline Embedded Logo & Solid White Button
 function getPasswordResetHTML(resetLink) {
-  // Ultra-crisp Embedded SVG Logo Data URI (Matches your pitch-black sleek aesthetic perfectly)
-  const logoDataUri = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='38' height='38' viewBox='0 0 38 38'><rect width='38' height='38' rx='8' fill='%231e1e1e' stroke='%23333333' stroke-width='1'/><text x='50% ' y='54%' dominant-baseline='middle' text-anchor='middle' fill='%23ffffff' font-family='Arial, sans-serif' font-weight='900' font-size='14'>SK</text></svg>";
-
   return `
     <!DOCTYPE html>
     <html lang="en">
@@ -63,13 +60,19 @@ function getPasswordResetHTML(resetLink) {
               <!-- Sleek Accent Top Bar -->
               <tr><td style="height: 3px; background: linear-gradient(90deg, #ffffff 0%, #757575 100%);"></td></tr>
 
-              <!-- Header with Logo on Left and Brand Name -->
+              <!-- Header with Professional Monogram Box on Left -->
               <tr>
                 <td align="center" style="padding: 32px 24px 16px 24px;">
                   <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center">
                     <tr>
                       <td style="vertical-align: middle; padding-right: 12px;">
-                        <img src="${logoDataUri}" alt="SK Logo" width="38" height="38" style="display: block; border-radius: 8px;">
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0">
+                          <tr>
+                            <td align="center" bgcolor="#1e1e1e" style="width: 38px; height: 38px; border-radius: 8px; border: 1px solid #333333; font-family: Arial, sans-serif; font-size: 13px; font-weight: 900; color: #ffffff; text-align: center; vertical-align: middle;">
+                              SK
+                            </td>
+                          </tr>
+                        </table>
                       </td>
                       <td style="vertical-align: middle; text-align: left;">
                         <h1 style="margin: 0; font-size: 20px; font-weight: 900; color: #ffffff; letter-spacing: 2px;">SK MESSENGER</h1>
@@ -95,11 +98,11 @@ function getPasswordResetHTML(resetLink) {
                     A cryptographic password reset sequence has been initiated for your SK Messenger account. Execute the authentication sequence below to update your security credentials.
                   </p>
 
-                  <!-- Bulletproof Solid White Button Table -->
+                  <!-- Bulletproof Solid White Button for Mobile & PC -->
                   <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" style="margin: 0 auto;">
                     <tr>
-                      <td align="center" bgcolor="#ffffff" style="border-radius: 12px; box-shadow: 0 4px 20px rgba(255, 255, 255, 0.15);">
-                        <a href="${resetLink}" target="_blank" style="font-size: 14px; font-weight: 800; color: #000000 !important; text-decoration: none; padding: 14px 36px; border-radius: 12px; display: inline-block; letter-spacing: 0.5px;">
+                      <td align="center" bgcolor="#ffffff" style="border-radius: 12px; -webkit-border-radius: 12px; -moz-border-radius: 12px; background: #ffffff;">
+                        <a href="${resetLink}" target="_blank" style="font-size: 14px; font-weight: 800; color: #000000 !important; background-color: #ffffff; text-decoration: none; padding: 14px 36px; border-radius: 12px; border: 1px solid #ffffff; display: inline-block; letter-spacing: 0.5px; mso-hide: all;">
                           RESET PASSWORD
                         </a>
                       </td>
